@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="text" name="username" placeholder="username" required>
                     </div>
                     <div class="form-group">
-                        <label>Kata Sandi</label>
-                        <input type="password" name="password" placeholder="••••••••" required>
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Masukan Password" required>
                     </div>
                     <button type="submit">Masuk Sekarang</button>
 
