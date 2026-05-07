@@ -61,15 +61,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body class="bg-light">
 
-    <nav class="navbar py-3" style="background-color:#1a1a2e;">
-        <div class="container">
-            <a href="../index.php" class="navbar-brand fw-bold text-white fs-5">MAM.</a>
+    <nav class="navbar bg-dark navbar-dark py-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+            <a class="navbar-brand fw-bold" href="#">MAM.</a>
+
             <div class="d-flex align-items-center gap-3">
-                <span class="text-secondary small">
+                <span class="text-white">
                     <i class="bi bi-person-circle me-1"></i>
                     <?= htmlspecialchars($_SESSION['username']) ?>
                 </span>
-                <a href="../auth/logout.php" class="btn btn-outline-secondary btn-sm">Logout</a>
+                <a href="auth/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
             </div>
         </div>
     </nav>
@@ -233,8 +234,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         </div>
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

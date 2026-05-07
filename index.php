@@ -86,8 +86,8 @@ $result = mysqli_query($koneksi, $query);
                                 <td><?=$row['jumlah']?></td>
                                 <td>
                                     <a href="pages/detail.php?id_asset=<?=$row['id_asset']?>" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                    <a href="pages/update.php?id_asset=<?=$row['id_asset']?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                                    <a href="pages/delete.php?id_asset=<?=$row['id_asset']?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                    <a href="pages/edit.php?id_asset=<?=$row['id_asset']?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                                    <a href="pages/hapus.php?id_asset=<?=$row['id_asset']?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
