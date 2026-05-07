@@ -1,19 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: "Outfit", sans-serif;
-    min-height: 100vh;
-    background-color: #f5f7fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-main {
+.auth-main {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -23,6 +12,7 @@ main {
     width: 50%;
     height: 100vh;
     position: relative;
+    flex-shrink: 0;
 }
 
 .image-container h1 {
@@ -34,6 +24,7 @@ main {
     font-size: 3rem;
     font-weight: bold;
     z-index: 1;
+    white-space: nowrap;
 }
 
 .image-container img {
@@ -59,61 +50,39 @@ main {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    background-color: #f5f7fa;
 }
 
 .login-box {
     background: white;
     padding: 2.5rem;
     border-radius: 1.25rem;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 8px 10px -6px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
     width: 100%;
     max-width: 450px;
 }
 
-.login-box h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #111827;
-}
-
-.login-box .subtitle {
+.subtitle {
     font-size: 0.95rem;
-    color: #6b7280;
-    margin-bottom: 2rem;
 }
-
-.form-group {
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input {
-    width: 100%;
+.form-control-auth {
     padding: 0.875rem 1rem;
     border: 1px solid #e2e8f0;
-    border-radius: 0.75rem;
+    border-radius: 0.75rem !important;
     font-size: 1rem;
-    transition: all 0.3s ease;
     background-color: #f8fafc;
+    transition: all 0.3s ease;
 }
 
-.form-group input:focus {
-    outline: none;
+.form-control-auth:focus {
     border-color: #2563eb;
     background-color: #fff;
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-button {
-    width: 100%;
+.btn-auth {
     padding: 0.875rem;
     background-color: #2563eb;
     color: white;
@@ -121,36 +90,28 @@ button {
     border-radius: 0.75rem;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 1rem;
 }
 
-button:hover {
+.btn-auth:hover {
     background-color: #1d4ed8;
+    color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-button:active {
+.btn-auth:active {
     transform: translateY(0);
+    color: white;
 }
 
-.login-box p {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-    color: #6b7280;
-}
-
-.login-box a {
+.auth-link {
     color: #2563eb;
     text-decoration: none;
-    font-weight: 600;
 }
 
-.error-msg {
-    color: #ef4444;
-    margin-bottom: 1rem;
-    text-align: center;
+.auth-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
