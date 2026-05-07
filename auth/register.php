@@ -84,6 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="image-container">
             <img src="../assets/img2.jpg" alt="Register Image">
+            <h1>Capture Every Asset</h1>
+            <p>Sistem Terpadu untuk monitoring kamera, lensa dan peralatan kreatuv </p>
         </div>
     </main>
 </body>

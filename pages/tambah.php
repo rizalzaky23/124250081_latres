@@ -63,14 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <nav class="navbar bg-dark navbar-dark py-3">
         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-            <a class="navbar-brand fw-bold" href="#">MAM.</a>
+            <a class="navbar-brand fw-bold" href="../index.php">MAM.</a>
 
             <div class="d-flex align-items-center gap-3">
                 <span class="text-white">
                     <i class="bi bi-person-circle me-1"></i>
                     <?= htmlspecialchars($_SESSION['username']) ?>
                 </span>
-                <a href="auth/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
+                <a href="../auth/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
             </div>
         </div>
     </nav>

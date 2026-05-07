@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $query = "UPDATE assets SET serial_number = ?, nama_alat = ?, merk = ?, status = ?, jumlah = ?, url_gambar = ? WHERE id_asset = ?";
         $stmt = $koneksi->prepare($query);
-        $stmt->bind_param("ssssdsd", $serial, $nama, $merk, $status, $jumlah, $url_gambar, $id);
+        $stmt->bind_param("ssssdsi", $serial, $nama, $merk, $status, $jumlah, $url_gambar, $id);
 
         if ($stmt->execute()) {
             header("Location: ../index.php");
@@ -67,14 +67,14 @@ $row = $result->fetch_assoc();
 <body class="bg-light">
     <nav class="navbar bg-dark navbar-dark py-3">
         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-            <a class="navbar-brand fw-bold" href="#">MAM.</a>
+            <a class="navbar-brand fw-bold" href="../index.php">MAM.</a>
 
             <div class="d-flex align-items-center gap-3">
                 <span class="text-white">
                     <i class="bi bi-person-circle me-1"></i>
                     <?= htmlspecialchars($_SESSION['username']) ?>
                 </span>
-                <a href="auth/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
+                <a href="../auth/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
             </div>
         </div>
     </nav>
@@ -167,35 +167,31 @@ $row = $result->fetch_assoc();
                     <div class="card-body p-4">
 
                         <h2 class="fs-6 fw-bold mb-1 d-flex align-items-center gap-2">
-                            <i class="bi bi-pencil-square text-white bg-dark rounded p-1"></i>
-                            Metode Penyuntingan
+                            <i class="bi bi-pencil-fill text-dark"></i>
+                            Mode Penyuntingan
                         </h2>
-                        <p class="text-muted small mb-3">
-                            Anda Sedang mengubah data asset, pastikan untuk :
+                        <p class="text-muted small mb-4">
+                            Anda sedang mengubah data asset. Pastikan untuk:
                         </p>
 
-                        <div class="mb-3">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <span class="badge rounded-2 fw-bold"
-                                    style="background-color:#1a1a2e;font-size:.7rem;letter-spacing:.5px;">CAM</span>
-                                <span class="fw-semibold small">Kamera (Body/Kit)</span>
-                            </div>
-                            <p class="mb-1" style="font-size:.8rem;">
-                                <span class="text-danger fw-semibold">CAM-</span><span
-                                    class="text-danger fw-semibold">[MERK]</span>-<span
-                                    class="text-danger fw-semibold">[NOMOR]</span>
-                            </p>
-                            <p class="text-muted mb-0" style="font-size:.8rem;">Contoh: SN-CAM-SONY-01</p>
+                        <div class="d-flex align-items-start gap-2 mb-3">
+                            <i class="bi bi-check2-square text-success mt-1"></i>
+                            <p class="small mb-0">Memverifikasi <strong>status terbaru</strong> (apakah alat baru saja kembali atau masuk servis).</p>
                         </div>
 
-                        <hr class="my-2">
+                        <div class="d-flex align-items-start gap-2 mb-3">
+                            <i class="bi bi-check2-square text-success mt-1"></i>
+                            <p class="small mb-0">Memastikan <strong>jumlah unit</strong> sudah sesuai dengan stok fisik di lemari penyimpanan.</p>
+                        </div>
 
-                        
+                        <div class="d-flex align-items-start gap-2 mb-4">
+                            <i class="bi bi-check2-square text-success mt-1"></i>
+                            <p class="small mb-0">Memperbarui <strong>URL foto</strong> jika terdapat kerusakan fisik yang perlu didokumentasikan.</p>
+                        </div>
 
-                        <div class="alert alert-warning d-flex align-items-start gap-2 py-2 px-3 mb-0 mt-3 small"
-                            role="alert">
-                            <i class="bi bi-lightbulb-fill mt-1 flex-shrink-0"></i>
-                            <span>Perubahan ini akan langsung berdampak pada laporan ketersediaan alan di dashboard</span>
+                        <div class="alert alert-warning border-0 shadow-sm d-flex align-items-start gap-2 py-2 px-3 mb-0 small" role="alert" style="background-color: #fff9e6;">
+                            <i class="bi bi-exclamation-circle-fill text-warning mt-1 flex-shrink-0"></i>
+                            <span class="text-dark" style="font-size: 0.85rem; line-height: 1.4;">Perubahan ini akan langsung berdampak pada laporan ketersediaan alat di Dashboard.</span>
                         </div>
 
                     </div>
