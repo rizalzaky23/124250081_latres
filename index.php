@@ -46,7 +46,7 @@ $result = mysqli_query($koneksi, $query);
                     <h1>Inventaris Alat Multimedia</h1>
                     <p>Kelola Stok Kamera, Lensa, dan Aksesoris Studio</p>
                 </div>
-                <a href="tambah.php" class="btn btn-dark btn-sm"><i class="bi bi-plus"></i> Tambah</a>
+                <a href="pages/tambah.php" class="btn btn-dark btn-sm"><i class="bi bi-plus"></i> Tambah</a>
             </div>
 
             <div class="card">
@@ -66,6 +66,7 @@ $result = mysqli_query($koneksi, $query);
                         <?php while($row = mysqli_fetch_assoc($result)) { 
                             if($row['status'] == "Tersedia"){
                                 $tampil = "bg-success";
+                                $tableTampil = "table-light";
                             }else if($row['status'] == "Dipinjam"){
                                 $tampil = "bg-info";
                                 $tableTampil = "table-info";
