@@ -85,9 +85,9 @@ $result = mysqli_query($koneksi, $query);
                                 <td><span class="badge <?=$tampil?>"><?=$row['status']?></span></td>
                                 <td><?=$row['jumlah']?></td>
                                 <td>
-                                    <a href="detail.php?id_asset=<?=$row['id_asset']?>" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
-                                    <a href="update.php?id_asset=<?=$row['id_asset']?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                                    <a href="delete.php?id_asset=<?=$row['id_asset']?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                    <a href="pages/detail.php?id_asset=<?=$row['id_asset']?>" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                                    <a href="pages/update.php?id_asset=<?=$row['id_asset']?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                                    <a href="pages/delete.php?id_asset=<?=$row['id_asset']?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
