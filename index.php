@@ -87,7 +87,7 @@ $result = mysqli_query($koneksi, $query);
                                 <td>
                                     <a href="pages/detail.php?id_asset=<?=$row['id_asset']?>" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
                                     <a href="pages/edit.php?id_asset=<?=$row['id_asset']?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-                                    <a href="pages/hapus.php?id_asset=<?=$row['id_asset']?>" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                    <a href="pages/hapus.php?id_asset=<?=$row['id_asset']?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data \'<?= addslashes($row['nama_alat']) ?>\'? Tindakan ini tidak dapat dibatalkan.')"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -97,6 +97,7 @@ $result = mysqli_query($koneksi, $query);
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
